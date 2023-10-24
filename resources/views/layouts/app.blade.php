@@ -49,6 +49,14 @@
                                 </li>
                             @endif
                         @else
+                            @if(auth()->user()->hasRole('admin'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('roles.index') }}">Roles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('users.index') }}">Users</a>
+                                </li>
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -72,9 +80,10 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="container-fluid py-4">
             @yield('content')
         </main>
     </div>
+    @yield('script')
 </body>
 </html>
