@@ -14,6 +14,9 @@
                 <div class="card-body">
                     <ul>
                         <li>
+                            <a href="{{ route('profile.edit') }}">Profile</a>
+                        </li>
+                        <li>
                             <a href="{{ route('friends.index') }}">Friends</a>
                         </li>
                         <li>
